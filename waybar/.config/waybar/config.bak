@@ -1,0 +1,48 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+    "modules-left": [],
+    "modules-center": [
+        "clock",
+        "hyprland/window",
+        "hyprland/workspaces",
+        "pulseaudio",
+        "network",
+        "battery"
+    ],
+    "modules-right": [],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["", ""]
+        }
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-disconnected": "󰖪"
+    },
+
+    "battery": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""]
+    }
+}

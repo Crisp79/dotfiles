@@ -1,0 +1,28 @@
+# --- Visuals ---
+background_opacity 0.75
+# This allows KDE to apply blur behind the window
+background_blur 32
+
+# --- Fonts (The Tech Look) ---
+font_family      JetBrainsMono Nerd Font
+bold_font        auto
+font_size        11.0
+
+# --- Cursor & Glow ---
+cursor_shape          beam
+cursor_beam_thickness 1.5
+# Makes the cursor feel like a laser
+cursor_blink_interval 0.5
+
+# --- Window Layout ---
+window_padding_width 10
+# active_border_color #00ff41
+# inactive_border_color #444444
+draw_minimal_borders yes
+window_border_width 1pt
+
+
+# BEGIN_KITTY_THEME
+# Cyberpunk
+include current-theme.conf
+# END_KITTY_THEME

@@ -1,0 +1,6 @@
+workspace "music"
+
+window-rule{
+    match app-id="spotify"
+    open-on-workspace "music"
+}

@@ -1,0 +1,15 @@
+include "niri_default.kdl"
+
+// Include dms files
+include "conf/colors.kdl"
+include "dms/layout.kdl"
+include "dms/alttab.kdl"
+include "conf/binds.kdl"
+include "dms/cursor.kdl"
+
+include "dms/windowrules.kdl"
+
+include "conf/follow_mouse.kdl"
+include "conf/no_max_edges.kdl"
+
+include "dms/outputs.kdl"

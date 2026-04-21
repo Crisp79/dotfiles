@@ -1,0 +1,161 @@
+{
+        "layer": "top",
+        "position": "top",
+        "reload_style_on_change": true,
+        "modules-left": ["group/leftinfo","custom/ScrollMPRIS"],
+        "modules-center": ["hyprland/workspaces"],
+        "modules-right": ["group/expand","bluetooth","network","pulseaudio","battery"],
+
+
+        "group/leftinfo": {
+            "orientation": "horizontal",
+            "modules": [
+                "custom/notification",
+                "clock",
+            ]
+        },
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "active": "",
+                "default": "",
+                "empty": "",
+            },
+            "active-only": false,
+            "all-outputs": false,
+            "persistent-workspaces": {
+                "eDP-1" : [11,12,13,14,15,16],
+                "DP-2" : [1,2,3,4,5,6]
+            },
+        },
+        "custom/notification": {
+            "tooltip": false,
+            "format": "",
+            "on-click": "swaync-client -t -sw",
+            "escape": true
+        },
+        "clock": {
+            "format": "{:%I:%M %p - %d %a} ",
+            "interval": 1,   
+            "tooltip-format": "<tt>{calendar}</tt>",
+            "calendar": {
+                "format": {
+                    "today": "<span color='#fAfBfC'><b>{}</b></span>"
+                }
+            },
+            "actions": {
+                "on-click-right": "shift_down",
+                "on-click": "shift_up"
+            }
+        },
+        "custom/scrolling_mpris": {
+            "exec": "~/.config/waybar/scripts/scroll_mpris.sh",
+            "format": "{}",
+            "return-type": "text",
+            "on-click": "playerctl -p spotify,%any play-pause",
+            "on-click-right": "playerctl -p spotify,%any next",
+            "on-click-middle": "playerctl -p spotify,%any previous"
+        },
+        "custom/ScrollMPRIS": {
+            "return-type": "json",
+            "exec": "ScrollMPRIS -s 40 -w 25",
+            "escape": true,
+            "on-click": "playerctl play-pause",
+            "on-click-right": "playerctl next",
+            "on-click-middle": "playerctl previous"
+        },
+        "network": {
+            "format-wifi": "",
+            "format-ethernet":"",
+            "format-disconnected": "",
+            "tooltip-format-disconnected": "Error",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} 🖧 ",
+            "on-double-click":"nmcli device wifi rescan",
+            "on-click-right": "kitty -e nmtui"
+        },
+        "bluetooth": {
+            "format-on": "󰂯",
+            "format-off": "BT-off",
+            "format-disabled": "󰂲",
+            "format-connected-battery": "{device_battery_percentage}% 󰂯",
+            "format-alt": "{device_alias} 󰂯",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click-right": "blueman-manager",
+        }, 
+        "battery": {
+            "interval":30,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "{capacity}% {icon}",
+            "format-charging": "{capacity}% 󰂄",
+            "format-plugged": "{capacity}% 󰂄 ",
+            "format-alt": "{time} {icon}",
+            "format-icons": [
+                "󰁻",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+            ],
+        },
+        "custom/expand": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/endpoint":{
+            "format": "|",
+            "tooltip": false
+        },
+        "group/expand": {
+            "orientation": "horizontal",
+            "drawer": {
+                "transition-duration": 600,
+                "transition-to-left": true,
+                "click-to-reveal": true
+            },
+            "modules": ["custom/expand", "custom/colorpicker","cpu","memory","tray","custom/endpoint"],
+        },
+        "custom/colorpicker": {
+            "format": "{}",
+            "return-type": "json",
+            "interval": "once",
+            "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+            "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+            "signal": 1
+        },
+        "cpu": {
+            "format": "󰻠",
+            "tooltip": true
+        },
+        "memory": {
+            "format": ""
+        },
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "",
+        },
+        "tray": {
+            "icon-size": 14,
+            "spacing": 10
+        },
+        "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "Muted ",
+    "format-icons": {
+        "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+}
+        } 
+

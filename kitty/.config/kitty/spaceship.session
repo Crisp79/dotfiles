@@ -1,0 +1,11 @@
+# Main coding area
+launch zsh
+
+# System monitoring panel
+launch --location=vsplit btop
+
+# Audio visualizer panel
+launch --location=hsplit cava
+
+# Network/Clock panel
+launch --location=hsplit tty-clock -c -C 4

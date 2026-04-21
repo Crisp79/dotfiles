@@ -1,0 +1,52 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+window#waybar {
+    background: #1d2021; /* Gruvbox Dark0_Hard */
+    color: #ebdbb2;
+    border-radius: 20px; /* Makes the bar ends rounded */
+    border: 1px solid #3c3836;
+}
+
+/* Individual module spacing */
+#clock, #window, #workspaces, #pulseaudio, #network, #battery {
+    padding: 0 12px;
+}
+
+/* The Workspace Pill Effect */
+#workspaces button {
+    color: #928374; /* Muted gray for inactive */
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    background: #b8bb26; /* Gruvbox Green (Light) */
+    color: #282828;      /* Dark text for contrast */
+    min-width: 40px;
+}
+
+#workspaces button:hover {
+    background: #504945;
+    color: #ebdbb2;
+}
+
+/* Icon styling to match the minimalist look */
+#pulseaudio, #network, #battery {
+    font-size: 16px;
+    color: #a89984;
+}
+
+#clock {
+    color: #ebdbb2;
+}
+
+#window {
+    color: #d5c4a1;
+    font-style: italic;
+}

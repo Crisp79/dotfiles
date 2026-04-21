@@ -1,0 +1,36 @@
+layout {
+    background-color "transparent"
+
+    focus-ring {
+        active-color   "#ea6962" // Primary Accent
+        inactive-color "#8c4945" // Muted Red-Brown for balance
+        urgent-color   "#d8a657" // Swapped old accent to urgent
+    }
+
+    border {
+        active-color   "#ea6962"
+        inactive-color "#3c3836" // Darker border for cleaner contrast
+        urgent-color   "#d8a657"
+    }
+
+    shadow {
+        color "#00000070"
+    }
+
+    tab-indicator {
+        active-color   "#ea6962"
+        inactive-color "#8c4945"
+        urgent-color   "#d8a657"
+    }
+
+    insert-hint {
+        color "#ea696280" // Matching hint with 50% opacity
+    }
+}
+
+recent-windows {
+    highlight {
+        active-color   "#502020" // Deep wine-dark highlight
+        urgent-color   "#d8a657"
+    }
+}
