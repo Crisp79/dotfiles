@@ -1,0 +1,17 @@
+# .clang-format
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+# Optional extras for consistency
+ColumnLimit: 100
+BreakBeforeBraces: Allman
+AlignAfterOpenBracket: Align
+SpaceBeforeParens: ControlStatements
+SortIncludes: false
+Cpp11BracedListStyle: true
+BinPackArguments: false
+AllowShortEnumsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: None
